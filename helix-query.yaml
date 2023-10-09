@@ -1,1 +1,12 @@
+version: 1
 
+indices:
+  allpages:
+    include:
+      - '/**'
+    target: /query-index.xlsx
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
