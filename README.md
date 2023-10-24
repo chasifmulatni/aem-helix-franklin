@@ -4,6 +4,8 @@ Your project's description...
 ## Environments
 - Preview: https://main--{repo}--{owner}.hlx.page/
 - Live: https://main--{repo}--{owner}.hlx.live/
+- -Preview: https://main--aem-helix-franklin--chasifmulatni.hlx.page/
+- Live: https://main--aem-helix-franklin--chasifmulatni.hlx.live/
 
 ## Installation
 
