@@ -132,6 +132,7 @@ function fill(form) {
 }
 
 async function createForm(formURL) {
+    console.log(formURL);
   const { pathname } = new URL(formURL);
   const resp = await fetch(pathname);
   const json = await resp.json();
@@ -191,7 +192,8 @@ async function createForm(formURL) {
 }
 
 export default async function decorate(block) {
-  const form = block.querySelector('a[href$=".json"]');
+  console.log("*******************************" + block.querySelector('a[href$=".json"]'));
+    const form = block.querySelector('a[href$=".json"]');
   addInViewAnimationToSingleElement(block, 'fade-up');
   if (form) {
     form.replaceWith(await createForm(form.href));

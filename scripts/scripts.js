@@ -126,7 +126,14 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
+async function loadEnvInfo() {
+  const envComments = document.createComment(window.location.hostname);
+  document.head.prepend(envComments);
+}
+
+
 async function loadPage() {
+   await loadEnvInfo();
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
