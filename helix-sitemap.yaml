@@ -7,4 +7,4 @@ sitemaps:
 		destination: /sitemap.xml
 	  in:
 		source: /in/query-index.json
-		destination: /in/sitemap.xml
+		destination: /in/sitemap_in.xml
