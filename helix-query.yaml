@@ -8,10 +8,22 @@ indices:
       - /drafts/**
     target: /query-index.json
     properties:
+      properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       title:
-        select: 'head > meta[property="og:title"]'
-        value: |
-          attribute(el, 'content')
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[property="og:description"]
+        value: attribute(el, "content")
+      content:
+        select: body > main > div:not(.isi)
+        value: textContent(el)
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")
   hindi:
     include:
       - /in/**
@@ -19,8 +31,20 @@ indices:
       - /drafts/**
     target: /in/query-index.json
     properties:
+      properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       title:
-        select: 'head > meta[property="og:title"]'
-        value: |
-          attribute(el, 'content')
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[property="og:description"]
+        value: attribute(el, "content")
+      content:
+        select: body > main > div:not(.isi)
+        value: textContent(el)
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")
 
