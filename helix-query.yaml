@@ -1,10 +1,17 @@
 version: 1
 
 indices:
-  allpages:
-    include:
+ english:
       - '/**'
     target: /query-index.xlsx
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
+ hindi:
+      - '/**'
+    target: /in/query-index.xlsx
     properties:
       title:
         select: head > meta[property="og:title"]
