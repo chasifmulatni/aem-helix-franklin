@@ -8,7 +8,6 @@ indices:
       - /drafts/**
     target: /query-index.json
     properties:
-      properties:
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
@@ -31,7 +30,6 @@ indices:
       - /drafts/**
     target: /in/query-index.json
     properties:
-      properties:
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
