@@ -7,13 +7,13 @@ indices:
 	    exclude:
       - '/in/**'
       - '/drafts/**'
-    target: /query-index.xlsx
-    properties:
+     target: /query-index.xlsx
+     properties:
       title:
         select: head > meta[property="og:title"]
         value: |
           attribute(el, 'content')
-	hindi:
+     hindi:
           include:
 	     - '/in/**'
 	  exclude:
