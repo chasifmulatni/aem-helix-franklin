@@ -14,14 +14,13 @@ indices:
         value: |
           attribute(el, 'content')
 	hindi:
-     include:
+          include:
 	     - '/in/**'
-	    exclude:
-	     - '/**'
-      - '/drafts/**'
-    target: /in/query-index.xlsx
-    properties:
-      title:
-        select: head > meta[property="og:title"]
-        value: |
-          attribute(el, 'content')
+	  exclude:
+            - '/drafts/**'
+          target: /in/query-index.xlsx
+          properties:
+           title:
+           select: head > meta[property="og:title"]
+           value: | 
+	     attribute(el, 'content')
