@@ -1,16 +1,24 @@
 version: 1
 
 indices:
- en:
-      - '/**'
+    default:
+	    include:
+       - '/**'
+	    exclude:
+      - '/in/**'
+      - '/drafts/**'
     target: /query-index.xlsx
     properties:
       title:
         select: head > meta[property="og:title"]
         value: |
           attribute(el, 'content')
- in:
-      - '/**'
+	hindi:
+     include:
+	     - '/in/**'
+	    exclude:
+	     - '/**'
+      - '/drafts/**'
     target: /in/query-index.xlsx
     properties:
       title:
