@@ -8,10 +8,10 @@ indices:
       - /drafts/**
     target: /query-index.json
     properties:
-      title: null
-      select: 'head > meta[property="og:title"]'
-      value: |
-        attribute(el, 'content')
+      title:
+        select: 'head > meta[property="og:title"]'
+        value: |
+          attribute(el, 'content')
   hindi:
     include:
       - /in/**
@@ -19,7 +19,8 @@ indices:
       - /drafts/**
     target: /in/query-index.json
     properties:
-      title: null
-      select: 'head > meta[property="og:title"]'
-      value: |
-        attribute(el, 'content')
+      title:
+        select: 'head > meta[property="og:title"]'
+        value: |
+          attribute(el, 'content')
+
