@@ -1,26 +1,25 @@
 version: 1
-
 indices:
-    default:
-	    include:
-       - '/**'
-	    exclude:
-      - '/in/**'
-      - '/drafts/**'
-     target: /query-index.xlsx
-     properties:
-      title:
-        select: head > meta[property="og:title"]
-        value: |
-          attribute(el, 'content')
-     hindi:
-          include:
-	     - '/in/**'
-	  exclude:
-            - '/drafts/**'
-          target: /in/query-index.xlsx
-          properties:
-           title:
-           select: head > meta[property="og:title"]
-           value: | 
-	     attribute(el, 'content')
+  default:
+    include:
+      - /**
+    exclude:
+      - /in/**
+      - /drafts/**
+    target: /query-index.json
+    properties:
+      title: null
+      select: 'head > meta[property="og:title"]'
+      value: |
+        attribute(el, 'content')
+  hindi:
+    include:
+      - /in/**
+    exclude:
+      - /drafts/**
+    target: /in/query-index.json
+    properties:
+      title: null
+      select: 'head > meta[property="og:title"]'
+      value: |
+        attribute(el, 'content')
