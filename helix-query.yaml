@@ -1,12 +1,26 @@
 version: 1
 
 indices:
-  allpages:
-    include:
-      - '/**'
-    target: /query-index.xlsx
-    properties:
+    default:
+	    include:
+       - '/**'
+	    exclude:
+      - '/in/**'
+      - '/drafts/**'
+     target: /query-index.xlsx
+     properties:
       title:
         select: head > meta[property="og:title"]
         value: |
           attribute(el, 'content')
+     hindi:
+          include:
+	     - '/in/**'
+	  exclude:
+            - '/drafts/**'
+          target: /in/query-index.xlsx
+          properties:
+           title:
+           select: head > meta[property="og:title"]
+           value: | 
+	     attribute(el, 'content')
